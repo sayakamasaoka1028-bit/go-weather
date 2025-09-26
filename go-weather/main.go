@@ -7,10 +7,10 @@ import (
 
 func main() {
     weatherData := map[string]string{
-        "tokyo":   "晴れ",
-        "osaka":   "曇り",
-        "sapporo": "雪",
-        "fukuoka": "雨",
+        "tokyo":   "晴れ ☀️",
+        "osaka":   "曇り ☁️",
+        "sapporo": "雪 ❄️",
+        "fukuoka": "雨 🌧️",
     }
 
     fmt.Print("都市名をカンマ区切りで入力してください: ")
