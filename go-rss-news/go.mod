@@ -1,4 +1,4 @@
-module go-rss-news
+module news
 
 go 1.22.2
 
