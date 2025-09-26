@@ -13,19 +13,20 @@ func main() {
         "fukuoka": "雨",
     }
 
-    var city string
-    fmt.Print("都市名を入力してください: ")
-    fmt.Scanln(&city)
+    fmt.Print("都市名をカンマ区切りで入力してください: ")
+    var input string
+    fmt.Scanln(&input)
 
-    // 入力を小文字に変換
-    city = strings.ToLower(city)
+    cities := strings.Split(input, ",")
 
-    weather, ok := weatherData[city]
-    if ok {
-        // 表示用に頭文字だけ大文字に変換
+    for _, city := range cities {
+        city = strings.TrimSpace(strings.ToLower(city))
+        weather, ok := weatherData[city]
         displayCity := strings.Title(city)
-        fmt.Printf("%sの天気: %s\n", displayCity, weather)
-    } else {
-        fmt.Println("その都市のデータはありません")
+        if ok {
+            fmt.Printf("%sの天気: %s\n", displayCity, weather)
+        } else {
+            fmt.Printf("%sのデータはありません\n", displayCity)
+        }
     }
 }
